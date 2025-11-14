@@ -53,15 +53,15 @@
     <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->
-            <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}">
-                {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) (.Site.Params.navbar.showBrandLogo | default true) }}
+            <!-- <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}">
+                {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) .Site.Params.navbar.showBrandLogo | default true }}
                 <img src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}" width="30" height="30"
                     class="d-inline-block align-top">
                 {{ .Site.Params.navbar.brandName | default .Site.Params.title }}
                 {{ else }}
                 {{ .Site.Params.navbar.brandName | default .Site.Params.title }}
                 {{ end }}
-            </a>
+            </a> -->
 
             {{ if not (.Site.Params.navbar.disableSearch | default false) }}
                 <div>
@@ -106,11 +106,11 @@
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
+                    {{ if and (.Site.Params.education.enable | default false) (not (.Site.Params.navbar.menus.disableresearch | default false)) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#education"
                             aria-label="education">
-                            {{ .Site.Params.education.title | default "Education" }}
+                            {{ .Site.Params.education.title | default "education" }}
                         </a>
                     </li>
                     {{ end }}
